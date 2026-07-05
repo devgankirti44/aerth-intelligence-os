@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Companies.css';
 
-const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.comgence-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com-os.onrender.com/api';
 
 export default function Companies() {
   const [companies, setCompanies] = useState([]);

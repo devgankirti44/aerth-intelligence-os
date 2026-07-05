@@ -1,10 +1,9 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 const AuthContext = createContext();
 
-// Set token from storage IMMEDIATELY on module load
 const savedToken = localStorage.getItem('aerth_token');
 if (savedToken) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${savedToken}`;
@@ -34,7 +33,6 @@ export function AuthProvider({ children }) {
     const res = await axios.post(`${API}/auth/login`, { email, password });
     localStorage.setItem('aerth_token', res.data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
-    // Fetch full user data
     const me = await axios.get(`${API}/auth/me`);
     setUser(me.data);
     return me.data;

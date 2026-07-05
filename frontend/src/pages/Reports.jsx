@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Reports.css';
 
-const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function Reports() {
   const [reports, setReports] = useState([]);

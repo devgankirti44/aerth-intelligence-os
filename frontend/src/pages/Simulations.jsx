@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Simulations.css';
 
-const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 const PRESETS = [
   "Trump imposes 60% tariff on all Chinese imports",

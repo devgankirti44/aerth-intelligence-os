@@ -4,7 +4,7 @@ import ForceGraph2D from 'react-force-graph-2d';
 import axios from 'axios';
 import './KnowledgeGraph.css';
 
-const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 const TYPE_COLORS = {
   company: '#A8A69C',
