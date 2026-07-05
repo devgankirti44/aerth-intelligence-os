@@ -27,18 +27,36 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Allowed origins — local dev + Vercel production + Vercel preview deploys
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://aerth-intelligence-os.vercel.app',
+  /^https:\/\/aerth-intelligence-.*\.vercel\.app$/,
+  /^https:\/\/aerth-.*-devgankirti44s-projects\.vercel\.app$/
+];
+
+function isOriginAllowed(origin) {
+  if (!origin) return true;
+  return allowedOrigins.some(o => 
+    typeof o === 'string' ? o === origin : o.test(origin)
+  );
+}
+
 // HTTP server (needed to attach socket.io)
 const httpServer = http.createServer(app);
 
-// Socket.io setup
+// Socket.io setup — with dynamic CORS
 const io = new SocketIOServer(httpServer, {
   cors: {
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST']
+    origin: (origin, cb) => {
+      cb(null, isOriginAllowed(origin));
+    },
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
-// Make io accessible to services
 setSocketIO(io);
 
 // Connection tracking
@@ -55,7 +73,19 @@ io.on('connection', (socket) => {
   });
 });
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+// Express CORS — dynamic origin check
+app.use(cors({
+  origin: (origin, cb) => {
+    if (isOriginAllowed(origin)) {
+      cb(null, true);
+    } else {
+      console.warn(`✗ CORS blocked: ${origin}`);
+      cb(null, false);
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api/briefing', briefingRoutes);
@@ -75,6 +105,15 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString(), connectedClients });
 });
 
+// Root — helpful for browser test
+app.get('/', (req, res) => {
+  res.json({ 
+    service: 'AERTH Intelligence OS Backend',
+    status: 'live',
+    docs: '/api/health'
+  });
+});
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -82,7 +121,6 @@ mongoose
     httpServer.listen(PORT, () => {
       console.log(`✓ Server running on port ${PORT}`);
       console.log(`⚡ WebSocket ready`);
-      // Start the simulated pulse (broadcasts signals for demo)
       startPulse();
     });
   })
