@@ -6,7 +6,7 @@ import AskPanel from '../components/companyProfile/AskPanel.jsx';
 import axios from 'axios';
 import './CompanyProfile.css';
 
-const API = 'https://aerth-intelligence-os.onrender.com-os.onrender.com/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function CompanyProfile() {
   const { slug } = useParams();
