@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './OpportunitiesPanel.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function OpportunitiesPanel() {
   const [opps, setOpps] = useState([]);

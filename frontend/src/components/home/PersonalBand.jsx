@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import './PersonalBand.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function PersonalBand() {
   const { user, loading: authLoading } = useAuth();

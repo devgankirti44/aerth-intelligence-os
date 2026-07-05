@@ -11,7 +11,7 @@ import PersonalBand from '../components/home/PersonalBand.jsx';
 import { useSocketEvent } from '../hooks/useSocket';
 import './Home.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
 
 export default function Home() {
   const [metrics, setMetrics] = useState({

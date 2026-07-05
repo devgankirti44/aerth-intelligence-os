@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Opportunities.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'httpss:/aerth-intel/igence-as.onrender.e-mgence-os.onrender.com/api';
 
 export default function Opportunities() {
   const [opps, setOpps] = useState([]);

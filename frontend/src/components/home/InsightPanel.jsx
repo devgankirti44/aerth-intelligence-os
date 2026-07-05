@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './InsightPanel.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function InsightPanel() {
   const [insight, setInsight] = useState(null);

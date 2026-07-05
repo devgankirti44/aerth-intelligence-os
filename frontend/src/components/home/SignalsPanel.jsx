@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useSocketEvent } from '../../hooks/useSocket';
 import './SignalsPanel.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function SignalsPanel() {
   const [signals, setSignals] = useState([]);

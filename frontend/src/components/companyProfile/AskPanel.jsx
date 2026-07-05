@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import './AskPanel.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 const SUGGESTED = [
   'What is their most recent strategic move?',

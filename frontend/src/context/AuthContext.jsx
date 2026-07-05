@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
 const AuthContext = createContext();
 
 // Set token from storage IMMEDIATELY on module load

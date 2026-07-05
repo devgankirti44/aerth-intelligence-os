@@ -7,7 +7,7 @@ import SignalFeed from '../components/briefing/SignalFeed.jsx';
 import OpportunityStrip from '../components/briefing/OpportunityStrip.jsx';
 import './Briefing.css';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.comgence-os.onrender.com/api';
 
 export default function Briefing() {
   const [signals, setSignals] = useState([]);
