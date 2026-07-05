@@ -1,0 +1,6 @@
+/* frontend/src/pages/Briefing.css */
+
+.briefing-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}

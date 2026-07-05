@@ -1,0 +1,342 @@
+.wl {
+  padding: 40px;
+  color: var(--moonstone);
+  max-width: 1500px;
+}
+
+.wl__loading {
+  padding: 60px;
+  color: var(--platinum);
+  font-family: var(--font-mono);
+}
+
+.wl__header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.wl__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+}
+
+.wl__title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+  color: #fff;
+  margin: 8px 0 10px 0;
+}
+
+.wl__subtitle {
+  font-size: 15px;
+  color: var(--platinum);
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.wl__empty-state {
+  padding: 100px 40px;
+  text-align: center;
+  color: var(--platinum);
+}
+
+.wl__empty-state p:first-child {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--moonstone);
+  margin-bottom: 12px;
+}
+
+.wl__empty-hint a {
+  color: var(--forest-soft);
+  text-decoration: none;
+}
+
+.wl__empty-hint a:hover {
+  text-decoration: underline;
+}
+
+/* Filters */
+.wl__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.wl-chip {
+  background: transparent;
+  border: 1px solid var(--hairline);
+  color: var(--platinum);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: capitalize;
+}
+
+.wl-chip:hover {
+  border-color: var(--forest-soft);
+}
+
+.wl-chip--active {
+  background: rgba(74, 122, 85, 0.1);
+  border-color: var(--forest);
+  color: #fff;
+}
+
+/* Body */
+.wl__body {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  min-height: 600px;
+}
+
+.wl__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  align-content: start;
+}
+
+.wl-card {
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.wl-card:hover {
+  border-color: var(--forest-soft);
+  transform: translateY(-2px);
+}
+
+.wl-card--active {
+  border-color: var(--forest);
+  background: rgba(74, 122, 85, 0.05);
+}
+
+.wl-card--critical { border-left: 3px solid var(--crimson); }
+.wl-card--high { border-left: 3px solid var(--amber); }
+
+.wl-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.wl-card__type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.wl-card__status {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.wl-card__status--watching { background: rgba(168,166,156,0.1); color: var(--platinum); }
+.wl-card__status--investigating { background: rgba(138,106,53,0.15); color: var(--amber); }
+.wl-card__status--actioned { background: rgba(74,122,85,0.15); color: var(--forest-soft); }
+
+.wl-card__title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 6px 0;
+  line-height: 1.35;
+}
+
+.wl-card__sub {
+  font-size: 12px;
+  color: var(--platinum);
+  margin: 0 0 12px 0;
+}
+
+.wl-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wl-card__has-notes {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--forest-soft);
+}
+
+.wl-card__remove {
+  background: none;
+  border: none;
+  color: var(--platinum);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+.wl-card__remove:hover {
+  background: var(--crimson);
+  color: #fff;
+}
+
+/* Detail */
+.wl__detail {
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 28px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.wl-detail__empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--platinum);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.wl-detail__header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.wl-detail__type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--forest-soft);
+  letter-spacing: 0.1em;
+}
+
+.wl-detail__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  margin: 8px 0 6px 0;
+  line-height: 1.3;
+}
+
+.wl-detail__sub {
+  font-size: 13px;
+  color: var(--platinum);
+  margin: 0 0 12px 0;
+}
+
+.wl-detail__goto {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--forest-soft);
+  text-decoration: none;
+}
+
+.wl-detail__goto:hover {
+  color: #fff;
+}
+
+.wl-detail__controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.wl-control label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--platinum);
+  margin-bottom: 6px;
+}
+
+.wl-control select {
+  width: 100%;
+  background: var(--obsidian-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--moonstone);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.wl-control select:focus {
+  border-color: var(--forest);
+}
+
+.wl-detail__notes label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--platinum);
+  margin-bottom: 8px;
+}
+
+.wl-detail__notes textarea {
+  width: 100%;
+  background: var(--obsidian-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--moonstone);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.wl-detail__notes textarea:focus {
+  border-color: var(--forest);
+}
+
+.wl-detail__save {
+  margin-top: 12px;
+  background: var(--forest);
+  border: none;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wl-detail__save:hover:not(:disabled) {
+  background: var(--forest-soft);
+}
+
+.wl-detail__save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

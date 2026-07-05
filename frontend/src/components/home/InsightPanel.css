@@ -1,0 +1,53 @@
+/* frontend/src/components/home/InsightPanel.css */
+
+.insight {
+  position: relative;
+  padding: 22px 4px 4px;
+  border-top: 1px solid var(--hairline);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.insight__body {
+  position: relative;
+  margin-top: 12px;
+  padding-right: 90px;
+}
+
+.insight__quote {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: -16px;
+  opacity: 0.5;
+}
+
+.insight__text {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.insight__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.insight__decor {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  opacity: 0.35;
+  pointer-events: none;
+}

@@ -1,0 +1,68 @@
+/* frontend/src/components/home/OpportunitiesPanel.css */
+
+.opps {
+  padding: 24px 24px;
+}
+
+.opps__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.opps__link {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.opps__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.opp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--hairline);
+  transition: all var(--duration) var(--ease-out);
+  border-radius: 10px;
+}
+
+.opp:last-child { border-bottom: none; }
+
+.opp:hover {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: linear-gradient(90deg,
+    var(--gold-glow-3),
+    transparent);
+}
+
+.opp__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(214, 192, 141, 0.05);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.opp__title {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.opp__score {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold);
+}

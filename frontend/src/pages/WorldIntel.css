@@ -1,0 +1,332 @@
+.wi {
+  padding: 40px;
+  color: var(--moonstone);
+  max-width: 1400px;
+}
+
+.wi__loading {
+  padding: 80px 40px;
+  color: var(--platinum);
+  font-family: var(--font-mono);
+}
+
+.wi__header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+}
+
+.wi__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+}
+
+.wi__title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+  color: #fff;
+  margin: 8px 0 10px 0;
+}
+
+.wi__subtitle {
+  font-size: 15px;
+  color: var(--platinum);
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.wi__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.wi-stat {
+  background: var(--obsidian-base);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wi-stat__num {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.wi-stat__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--platinum);
+  text-transform: uppercase;
+}
+
+.wi__section {
+  margin-bottom: 48px;
+}
+
+.wi__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.wi__section-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.wi__section-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.wi__refresh {
+  background: transparent;
+  border: 1px solid var(--hairline);
+  color: var(--moonstone);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wi__refresh:hover:not(:disabled) {
+  border-color: var(--forest);
+  color: #fff;
+}
+
+.wi__refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Brief */
+.wi__brief {
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.wi__brief-text p {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--moonstone);
+  margin: 0 0 20px 0;
+}
+
+.wi__brief-text p:last-child { margin-bottom: 0; }
+
+.wi__brief-loading {
+  padding: 40px 0;
+  color: var(--platinum);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* Domains heat */
+.wi__domains {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.wi-domain {
+  position: relative;
+  height: 140px;
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.wi-domain:hover {
+  border-color: var(--forest-soft);
+  transform: translateY(-2px);
+}
+
+.wi-domain--active {
+  border-color: var(--forest);
+  background: rgba(74, 122, 85, 0.06);
+}
+
+.wi-domain__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(74, 122, 85, 0.25), rgba(74, 122, 85, 0.02));
+  transition: height 0.5s ease;
+}
+
+.wi-domain__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wi-domain__name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--platinum);
+  text-transform: uppercase;
+}
+
+.wi-domain__count {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: #fff;
+  line-height: 1;
+}
+
+/* Regions */
+.wi__regions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.wi-region {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px;
+  align-items: center;
+  gap: 16px;
+}
+
+.wi-region__name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--moonstone);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wi-region__bar-wrap {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.wi-region__bar {
+  height: 100%;
+  background: linear-gradient(to right, var(--forest), var(--forest-soft));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.wi-region__count {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--platinum);
+  text-align: right;
+}
+
+/* Feed */
+.wi__feed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wi-signal {
+  display: block;
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 20px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.wi-signal:hover {
+  border-color: var(--forest-soft);
+  background: var(--obsidian-lift);
+}
+
+.wi-signal__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.wi-signal__domain {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+  padding: 2px 8px;
+  background: rgba(74, 122, 85, 0.1);
+  border-radius: 4px;
+}
+
+.wi-signal__source {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--platinum);
+}
+
+.wi-signal__time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--platinum);
+  margin-left: auto;
+}
+
+.wi-signal__title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.wi-signal__summary {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--platinum);
+  margin: 0;
+}

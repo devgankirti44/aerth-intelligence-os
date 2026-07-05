@@ -1,0 +1,149 @@
+/* frontend/src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ═══════════════════════════════════════════════
+     AERTH PREMIUM DARK PALETTE
+     Obsidian · Graphite · Platinum · Moss · Moonstone
+     ═══════════════════════════════════════════════ */
+
+  /* ─── SURFACES ─── */
+  --obsidian-deep:     #07080A;   /* Matte obsidian — app bg */
+  --obsidian-base:     #0C0D10;   /* Rich graphite — workspace */
+  --obsidian-lift:     #131418;   /* Soft charcoal — panels */
+  --obsidian-glow:     #1A1C20;   /* Hover / raised */
+
+  /* ─── PRIMARY: FOREST MOSS ─── */
+  --forest:            #4A7A55;   /* Deep moss — primary accent */
+  --forest-soft:       #6B9575;   /* Living moss — text/glow */
+  --forest-deep:       #2E4A34;   /* Shadow moss */
+  --forest-glow:       rgba(74, 122, 85, 0.14);
+
+  /* ─── SECONDARY: MOONSTONE IVORY ─── */
+  --moonstone:         #E4DFD1;   /* Warm moonstone — headlines */
+  --moonstone-soft:    #C7C1B0;   /* Softer moonstone */
+
+  /* ─── HIGHLIGHT: BRUSHED PLATINUM ─── */
+  --platinum:          #A8A69C;   /* Brushed platinum — highlights */
+  --platinum-warm:     #B5B0A3;   /* Warmer platinum */
+  --platinum-glow:     rgba(168, 166, 156, 0.10);
+
+  /* Legacy gold vars remapped to platinum (compatibility) */
+  --gold:              #A8A69C;
+  --gold-warm:         #B5B0A3;
+  --gold-deep:         #6E6C64;
+  --gold-glow-1:       rgba(168, 166, 156, 0.10);
+  --gold-glow-2:       rgba(168, 166, 156, 0.05);
+  --gold-glow-3:       rgba(168, 166, 156, 0.02);
+
+  /* ─── WARNING: BURNISHED BRONZE ─── */
+  --amber:             #8A6A35;   /* Burnished bronze */
+  --bronze:            #8A6A35;
+
+  /* ─── RISK: DEEP BURGUNDY ─── */
+  --crimson:           #7A3838;   /* Deep burgundy */
+  --burgundy:          #7A3838;
+
+  --ivory:             #E4DFD1;
+
+  /* ─── TEXT HIERARCHY ─── */
+  --text-primary:      #E4DFD1;   /* Moonstone — headlines */
+  --text-secondary:    #8A8578;   /* Muted stone — body */
+  --text-tertiary:     #56534A;   /* Fossil — labels */
+  --text-quiet:        #2E2C27;   /* Whisper — disabled */
+
+  /* ─── HAIRLINES ─── */
+  --hairline:          rgba(255, 255, 255, 0.032);
+  --hairline-soft:     rgba(255, 255, 255, 0.055);
+
+  /* ─── TYPOGRAPHY ─── */
+  --font-serif:        'Fraunces', Georgia, serif;
+  --font-sans:         'Inter', system-ui, sans-serif;
+  --font-mono:         'JetBrains Mono', monospace;
+
+  /* ─── MOTION ─── */
+  --ease-out:          cubic-bezier(0.16, 1, 0.3, 1);
+  --duration:          280ms;
+
+  /* ─── LAYOUT ─── */
+  --nav-width:         232px;
+  --topbar-height:     76px;
+
+  --r-sm:              14px;
+  --r-md:              22px;
+  --r-lg:              32px;
+  --r-xl:              40px;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--obsidian-deep);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Extremely subtle ambient light — barely perceptible */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse,
+    rgba(74, 122, 85, 0.02),
+    transparent 60%);
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  right: 10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(ellipse,
+    rgba(168, 166, 156, 0.012),
+    transparent 60%);
+  filter: blur(160px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+::selection {
+  background: rgba(74, 122, 85, 0.25);
+  color: var(--text-primary);
+}

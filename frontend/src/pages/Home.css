@@ -1,0 +1,213 @@
+/* frontend/src/pages/Home.css */
+
+.home {
+  position: relative;
+  border-radius: var(--r-xl);
+  padding: 4px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(214, 192, 141, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 100%, rgba(214, 192, 141, 0.04), transparent 40%),
+    linear-gradient(180deg, var(--obsidian-lift), var(--obsidian-base));
+  border: 1px solid rgba(214, 192, 141, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 40px 80px -20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 50% 50%, rgba(214, 192, 141, 0.02), transparent 70%);
+  pointer-events: none;
+}
+
+/* TOP ROW */
+.home__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px 1fr 340px;
+  min-height: 780px;
+}
+
+.home__grid::before,
+.home__grid::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent,
+    var(--hairline-soft) 20%,
+    var(--hairline-soft) 80%,
+    transparent);
+  pointer-events: none;
+}
+.home__grid::before { left: 240px; }
+.home__grid::after  { right: 340px; }
+
+.home__metrics {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* GLOBE — locked to fill full column */
+.home__globe {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 780px;
+}
+
+.home__globe .globe-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home__globe .globe-panel__globe {
+  flex: 1 1 auto;
+  min-height: 550px;
+  position: relative;
+}
+
+.home__globe .globe-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.home__rail {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* MIDDLE ROW */
+.home__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-top: 1px solid var(--hairline);
+}
+
+.home__row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--hairline-soft) 20%,
+    var(--hairline-soft) 80%,
+    transparent);
+}
+
+.home__row::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: calc(41.67% + 4px);
+  width: 1px;
+  background: linear-gradient(180deg,
+    transparent,
+    var(--hairline-soft) 20%,
+    var(--hairline-soft) 80%,
+    transparent);
+}
+
+/* BOTTOM */
+.timeline-wrap {
+  position: relative;
+  border-top: 1px solid var(--hairline);
+}
+
+.timeline-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--hairline-soft) 20%,
+    var(--hairline-soft) 80%,
+    transparent);
+}
+
+.panel__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-tertiary);
+}
+
+/* Market Pulse */
+.market-pulse {
+  padding: 22px 4px 22px;
+  border-top: 1px solid var(--hairline);
+  margin-top: 20px;
+}
+
+.market-pulse__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.market-pulse__left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.market-pulse__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-pulse__key {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.market-pulse__val {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.market-pulse__val--good { color: var(--forest-soft); }
+.market-pulse__val--warn { color: var(--amber); }
+.market-pulse__val--down { color: var(--crimson); }
+
+.market-pulse__right {
+  position: relative;
+  text-align: right;
+}
+
+.market-pulse__number {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: var(--text-primary);
+  margin-top: -6px;
+  letter-spacing: -0.5px;
+}
