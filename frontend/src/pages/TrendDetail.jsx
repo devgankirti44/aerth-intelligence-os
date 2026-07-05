@@ -4,7 +4,7 @@ import axios from 'axios';
 import './TrendDetail.css';
 import PinButton from '../components/common/PinButton';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://aerth-intelligence-os.onrender.com/api';
 
 export default function TrendDetail() {
   const { slug } = useParams();
