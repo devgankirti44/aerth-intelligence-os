@@ -2,9 +2,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import './Sidebar.css';
+
 const NAV = [
   { path: '/home',                label: 'Home',              icon: HomeIcon },
   { path: '/my-company',          label: 'My Company',         icon: MyCompanyIcon, requiresCompany: true },
+  { path: '/micro-plays',         label: 'Micro Plays',        icon: SparkleIcon },
   { path: '/world-intelligence',  label: 'World Intelligence', icon: GlobeIcon },
   { path: '/companies',           label: 'Companies',          icon: CompaniesIcon },
   { path: '/trends',              label: 'Trends',             icon: TrendsIcon },
@@ -15,7 +17,6 @@ const NAV = [
   { path: '/knowledge',           label: 'Knowledge Graph',    icon: KnowledgeIcon },
   { path: '/watchlist',           label: 'Watchlist',          icon: WatchlistIcon },
   { path: '/settings',            label: 'Settings',           icon: SettingsIcon },
-  { path: '/micro-plays', label: 'Micro Plays', icon: SparkleIcon },
 ];
 
 export default function Sidebar() {
@@ -53,11 +54,10 @@ export default function Sidebar() {
           <span className="nav__brand-sub">INTELLIGENCE OS</span>
         </div>
       </div>
+
       <nav className="nav__items">
         {NAV.map(item => {
-          // Hide "My Company" if user has no company registered
           if (item.requiresCompany && !user?.hasCompany) return null;
-          
           const Icon = item.icon;
           return (
             <NavLink
@@ -86,7 +86,6 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Profile with dropdown */}
       <div className="nav__profile-wrap" ref={menuRef}>
         {menuOpen && (
           <div className="nav__profile-menu">
@@ -108,6 +107,12 @@ export default function Sidebar() {
                     ◈ My Company
                   </button>
                 )}
+                <button
+                  className="nav__menu-item"
+                  onClick={() => { setMenuOpen(false); navigate('/micro-plays'); }}
+                >
+                  ✦ Micro Plays
+                </button>
                 <div className="nav__menu-info">
                   <span className="nav__menu-email">{user.email}</span>
                 </div>
@@ -133,7 +138,7 @@ export default function Sidebar() {
             )}
           </div>
         )}
-        <div className="nav__profile" onClick={() => { alert('clicked!'); setMenuOpen(!menuOpen); }}>
+        <div className="nav__profile" onClick={() => setMenuOpen(!menuOpen)}>
           <div className="nav__profile-avatar">{initial}</div>
           <div className="nav__profile-info">
             <span className="nav__profile-name">{displayName}</span>
