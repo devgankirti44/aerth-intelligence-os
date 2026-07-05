@@ -49,14 +49,11 @@ const httpServer = http.createServer(app);
 // Socket.io setup — with dynamic CORS
 const io = new SocketIOServer(httpServer, {
   cors: {
-    origin: (origin, cb) => {
-      cb(null, isOriginAllowed(origin));
-    },
+    origin: true,
     methods: ['GET', 'POST'],
     credentials: true
   }
 });
-
 setSocketIO(io);
 
 // Connection tracking
@@ -75,17 +72,9 @@ io.on('connection', (socket) => {
 
 // Express CORS — dynamic origin check
 app.use(cors({
-  origin: (origin, cb) => {
-    if (isOriginAllowed(origin)) {
-      cb(null, true);
-    } else {
-      console.warn(`✗ CORS blocked: ${origin}`);
-      cb(null, false);
-    }
-  },
+  origin: true,
   credentials: true
 }));
-
 app.use(express.json());
 
 app.use('/api/briefing', briefingRoutes);
