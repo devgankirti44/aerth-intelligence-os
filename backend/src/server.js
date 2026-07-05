@@ -22,6 +22,7 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/user.js';
 import researchRoutes from './routes/research.js';
 import { setSocketIO, startPulse } from './services/realtimeService.js';
+import personalRoutes from './routes/personal.js';
 
 dotenv.config();
 
@@ -91,6 +92,8 @@ app.use('/api/graph', graphRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/research', researchRoutes);
+app.use('/api/personal', personalRoutes);
+
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString(), connectedClients });

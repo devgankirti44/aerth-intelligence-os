@@ -17,6 +17,7 @@ import Onboarding from './pages/Onboarding';
 import MyCompany from './pages/MyCompany';
 import Settings from './pages/Settings';
 import Research from './pages/Research';
+import PersonalOpportunities from './pages/PersonalOpportunities';
 import './App.css';
 
 const FULLSCREEN_ROUTES = ['/login', '/signup', '/onboarding'];
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/my-company" element={<MyCompany />} />
             <Route path="/settings" element={<Settings />} />
 <Route path="/research" element={<Research />} />
+<Route path="/micro-plays" element={<PersonalOpportunities />} />
           </Routes>
         </main>
       </div>

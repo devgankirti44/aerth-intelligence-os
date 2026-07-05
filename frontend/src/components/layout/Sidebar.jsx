@@ -15,6 +15,7 @@ const NAV = [
   { path: '/knowledge',           label: 'Knowledge Graph',    icon: KnowledgeIcon },
   { path: '/watchlist',           label: 'Watchlist',          icon: WatchlistIcon },
   { path: '/settings',            label: 'Settings',           icon: SettingsIcon },
+  { path: '/micro-plays', label: 'Micro Plays', icon: SparkleIcon },
 ];
 
 export default function Sidebar() {
@@ -178,4 +179,10 @@ function MyCompanyIcon() {
       <path d="M12 2l3 5 5 1-4 4 1 6-5-3-5 3 1-6-4-4 5-1 3-5z"/>
     </svg>
   );
+}
+function SparkleIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
+    <path d="M12 3l1.5 5 5 1.5-5 1.5L12 16l-1.5-5-5-1.5 5-1.5L12 3z"/>
+    <path d="M19 16l0.7 2 2 0.7-2 0.7L19 21l-0.7-2-2-0.7 2-0.7L19 16z"/>
+  </svg>;
 }
