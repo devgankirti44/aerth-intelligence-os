@@ -1,0 +1,229 @@
+.settings {
+  padding: 40px;
+  color: var(--moonstone);
+  max-width: 900px;
+}
+
+.settings__loading {
+  padding: 60px;
+  text-align: center;
+  color: var(--platinum);
+  font-family: var(--font-mono);
+}
+
+.settings__header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+
+.settings__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--forest-soft);
+  text-transform: uppercase;
+}
+
+.settings__title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+  color: #fff;
+  margin: 8px 0 10px 0;
+}
+
+.settings__subtitle {
+  font-size: 15px;
+  color: var(--platinum);
+}
+
+.settings__msg {
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+
+.settings__msg--success {
+  background: rgba(74, 122, 85, 0.12);
+  border: 1px solid var(--forest);
+  color: var(--forest-soft);
+}
+
+.settings__msg--error {
+  background: rgba(122, 56, 56, 0.12);
+  border: 1px solid var(--crimson);
+  color: #C88;
+}
+
+.settings__section {
+  margin-bottom: 36px;
+}
+
+.settings__section-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 14px 0;
+}
+
+.settings__section-title--danger {
+  color: #C88;
+}
+
+.settings__card {
+  background: var(--obsidian-base);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.settings__card--danger {
+  border-color: rgba(122, 56, 56, 0.3);
+}
+
+.settings__field {
+  margin-bottom: 16px;
+}
+
+.settings__field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--platinum);
+  margin-bottom: 6px;
+}
+
+.settings__field input {
+  width: 100%;
+  background: var(--obsidian-deep);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.settings__field input:focus {
+  border-color: var(--forest);
+}
+
+.settings__btn {
+  background: var(--forest);
+  border: none;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.15s;
+}
+
+.settings__btn:hover:not(:disabled) {
+  background: var(--forest-soft);
+}
+
+.settings__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings__btn--danger {
+  background: transparent;
+  color: #C88;
+  border: 1px solid rgba(122, 56, 56, 0.4);
+}
+
+.settings__btn--danger:hover:not(:disabled) {
+  background: rgba(122, 56, 56, 0.12);
+}
+
+.settings__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.settings__info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+
+.settings__info-row:last-child { border-bottom: none; }
+
+.settings__info-key {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--platinum);
+  text-transform: uppercase;
+}
+
+.settings__info-val {
+  color: #fff;
+}
+
+.settings__empty {
+  padding: 12px 0;
+  color: var(--platinum);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.settings__pref-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.settings__pref-row:last-child { border-bottom: none; }
+
+.settings__pref-title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.settings__pref-desc {
+  color: var(--platinum);
+  font-size: 12px;
+}
+
+.settings__badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(168, 166, 156, 0.1);
+  color: var(--platinum);
+}
+
+.settings__badge--on {
+  background: rgba(74, 122, 85, 0.15);
+  color: var(--forest-soft);
+}
+
+.settings__danger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.settings__danger-row:last-child { border-bottom: none; }

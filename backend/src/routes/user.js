@@ -137,5 +137,69 @@ router.get('/company/competitor-events', requireAuth, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+// PATCH /api/user/profile — update name/email
+router.patch('/profile', requireAuth, async (req, res) => {
+  try {
+    const { name, email } = req.body;
+    const updates = {};
+    if (name) updates.name = name;
+    if (email) updates.email = email.toLowerCase();
+
+    if (email) {
+      const existing = await User.findOne({ email: email.toLowerCase(), _id: { $ne: req.user._id } });
+      if (existing) return res.status(409).json({ error: 'Email already taken' });
+    }
+
+    const user = await User.findByIdAndUpdate(req.user._id, updates, { new: true }).select('-passwordHash');
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// PATCH /api/user/password — change password
+router.patch('/password', requireAuth, async (req, res) => {
+  try {
+    const bcrypt = (await import('bcryptjs')).default;
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ error: 'Both current and new password required' });
+    }
+    if (newPassword.length < 6) {
+      return res.status(400).json({ error: 'New password must be at least 6 characters' });
+    }
+
+    const user = await User.findById(req.user._id);
+    const valid = await bcrypt.compare(currentPassword, user.passwordHash);
+    if (!valid) return res.status(401).json({ error: 'Current password is incorrect' });
+
+    user.passwordHash = await bcrypt.hash(newPassword, 10);
+    await user.save();
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// DELETE /api/user/company — remove registered company
+router.delete('/company', requireAuth, async (req, res) => {
+  try {
+    await User.findByIdAndUpdate(req.user._id, { myCompany: null });
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// DELETE /api/user/account — delete entire account
+router.delete('/account', requireAuth, async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.user._id);
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 export default router;

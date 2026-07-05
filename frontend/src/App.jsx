@@ -15,6 +15,8 @@ import KnowledgeGraph from './pages/KnowledgeGraph';
 import Auth from './pages/Auth';
 import Onboarding from './pages/Onboarding';
 import MyCompany from './pages/MyCompany';
+import Settings from './pages/Settings';
+import Research from './pages/Research';
 import './App.css';
 
 const FULLSCREEN_ROUTES = ['/login', '/signup', '/onboarding'];
@@ -53,6 +55,8 @@ export default function App() {
             <Route path="/watchlist" element={<Watchlist />} />
             <Route path="/knowledge" element={<KnowledgeGraph />} />
             <Route path="/my-company" element={<MyCompany />} />
+            <Route path="/settings" element={<Settings />} />
+<Route path="/research" element={<Research />} />
           </Routes>
         </main>
       </div>

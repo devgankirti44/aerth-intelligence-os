@@ -20,6 +20,7 @@ import watchlistRoutes from './routes/watchlist.js';
 import graphRoutes from './routes/knowledgeGraph.js';
 import authRoutes from './routes/auth.js';
 import userRoutes from './routes/user.js';
+import researchRoutes from './routes/research.js';
 import { setSocketIO, startPulse } from './services/realtimeService.js';
 
 dotenv.config();
@@ -89,6 +90,7 @@ app.use('/api/watchlist', watchlistRoutes);
 app.use('/api/graph', graphRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/research', researchRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString(), connectedClients });
