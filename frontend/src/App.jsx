@@ -18,7 +18,9 @@ import MyCompany from './pages/MyCompany';
 import Settings from './pages/Settings';
 import Research from './pages/Research';
 import PersonalOpportunities from './pages/PersonalOpportunities';
+import AskAerthModal from './components/assistant/AskAerthModal.jsx';
 import './App.css';
+
 
 const FULLSCREEN_ROUTES = ['/login', '/signup', '/onboarding'];
 
