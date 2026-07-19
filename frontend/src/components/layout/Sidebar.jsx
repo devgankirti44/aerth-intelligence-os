@@ -18,8 +18,8 @@ const NAV = [
   { path: '/watchlist',           label: 'Watchlist',          icon: WatchlistIcon },
   { path: '/settings',            label: 'Settings',           icon: SettingsIcon },
 ];
+export default function Sidebar({ onOpenAsk }) {
 
-export default function Sidebar() {
   const { user, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
@@ -74,17 +74,21 @@ export default function Sidebar() {
           );
         })}
       </nav>
-
-      <div className="nav__assistant">
-        <div className="nav__assistant-inner">
-          <div className="nav__assistant-icon"><SparkIcon /></div>
-          <div className="nav__assistant-text">
-            <span className="nav__assistant-title">Ask AERTH AI</span>
-            <span className="nav__assistant-sub">Your intelligence analyst</span>
-          </div>
-          <span className="nav__assistant-arrow">→</span>
-        </div>
-      </div>
+<div className="nav__assistant">
+  <button
+    type="button"
+    className="nav__assistant-inner"
+    onClick={onOpenAsk}
+  >
+    <div className="nav__assistant-icon"><SparkIcon /></div>
+    <div className="nav__assistant-text">
+      <span className="nav__assistant-title">Ask AERTH AI</span>
+      <span className="nav__assistant-sub">Your intelligence analyst</span>
+    </div>
+    <span className="nav__assistant-arrow">→</span>
+  </button>
+</div>
+      
 
       <div className="nav__profile-wrap" ref={menuRef}>
         {menuOpen && (

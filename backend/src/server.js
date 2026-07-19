@@ -23,6 +23,8 @@ import userRoutes from './routes/user.js';
 import researchRoutes from './routes/research.js';
 import { setSocketIO, startPulse } from './services/realtimeService.js';
 import personalRoutes from './routes/personal.js';
+import askRoutes from './routes/ask.js';
+
 
 dotenv.config();
 
@@ -93,6 +95,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/research', researchRoutes);
 app.use('/api/personal', personalRoutes);
+app.use('/api/ask', askRoutes);
+
 
 
 app.get('/api/health', (req, res) => {
