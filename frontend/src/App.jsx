@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar.jsx';
 import TopBar from './components/layout/TopBar.jsx';
@@ -21,12 +22,14 @@ import PersonalOpportunities from './pages/PersonalOpportunities';
 import AskAerthModal from './components/assistant/AskAerthModal.jsx';
 import './App.css';
 
-
 const FULLSCREEN_ROUTES = ['/login', '/signup', '/onboarding'];
 
 export default function App() {
   const location = useLocation();
   const isFullscreen = FULLSCREEN_ROUTES.includes(location.pathname);
+
+  // ✅ State that controls the Ask AERTH AI modal
+  const [askOpen, setAskOpen] = useState(false);
 
   if (isFullscreen) {
     return (
@@ -40,7 +43,9 @@ export default function App() {
 
   return (
     <div className="app">
-      <Sidebar />
+      {/* ✅ Prop name MUST be onOpenAsk — that's what Sidebar destructures */}
+      <Sidebar onOpenAsk={() => setAskOpen(true)} />
+
       <div className="app__body">
         <TopBar />
         <main className="app__main">
@@ -59,11 +64,17 @@ export default function App() {
             <Route path="/knowledge" element={<KnowledgeGraph />} />
             <Route path="/my-company" element={<MyCompany />} />
             <Route path="/settings" element={<Settings />} />
-<Route path="/research" element={<Research />} />
-<Route path="/micro-plays" element={<PersonalOpportunities />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/micro-plays" element={<PersonalOpportunities />} />
           </Routes>
         </main>
       </div>
+
+      {/* ✅ Modal actually rendered here, outside the routed content */}
+      <AskAerthModal
+        isOpen={askOpen}
+        onClose={() => setAskOpen(false)}
+      />
     </div>
   );
 }
