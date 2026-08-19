@@ -11,8 +11,15 @@ import { isAiInCooldown, triggerCooldown, getCooldownRemaining } from '../utils/
 let groq = null;
 function getClient() {
   if (groq) return groq;
+
+  console.log("GROQ KEY EXISTS:", !!process.env.GROQ_API_KEY);
+
   if (!process.env.GROQ_API_KEY) return null;
-  groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
+  groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY
+  });
+
   return groq;
 }
 
