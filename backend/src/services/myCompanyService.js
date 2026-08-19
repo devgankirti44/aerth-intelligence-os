@@ -138,7 +138,7 @@ Rules: 3-5 threats, 4-6 opportunities, 3-5 competitor moves, 5-7 recommendations
   let completion;
   try {
     completion = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       temperature: 0.3,
       response_format: { type: 'json_object' },
       max_tokens: 4000,
