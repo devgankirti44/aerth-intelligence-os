@@ -64,7 +64,7 @@ Analyze deeply. Return ONLY valid JSON:
 
   try {
     const completion = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
       temperature: 0.3,
       response_format: { type: 'json_object' },
       messages: [

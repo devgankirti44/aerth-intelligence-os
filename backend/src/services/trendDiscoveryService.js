@@ -82,7 +82,7 @@ Be bold. Find non-obvious patterns. Think like a top-tier strategist.`;
 
   try {
     const completion = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
       temperature: 0.5,
       response_format: { type: 'json_object' },
       max_tokens: 4000,

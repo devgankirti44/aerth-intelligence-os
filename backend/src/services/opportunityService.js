@@ -87,7 +87,7 @@ Ensure the "associatedTrendSlugs" match actual slugs from the trends list. Keep 
 
   try {
     const completion = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
       temperature: 0.4,
       response_format: { type: 'json_object' },
       max_tokens: 4000,

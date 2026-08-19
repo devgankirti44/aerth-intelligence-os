@@ -93,7 +93,7 @@ Style: Bloomberg meets Kissinger meets McKinsey. Sharp, non-obvious, decision-gr
 Pick 4-5 trends and 3-4 opportunities max (the most important ones).`;
 
   const completion = await client.chat.completions.create({
-    model: 'llama-3.3-70b-versatile',
+    model: 'openai/gpt-oss-120b',
     temperature: 0.5,
     response_format: { type: 'json_object' },
     max_tokens: 4000,

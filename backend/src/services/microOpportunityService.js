@@ -108,7 +108,7 @@ Generate 6-8 opportunities. Mix difficulty levels and revenue ranges. Be specifi
   let completion;
   try {
     completion = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-120b',
       temperature: 0.5,
       response_format: { type: 'json_object' },
       max_tokens: 4000,

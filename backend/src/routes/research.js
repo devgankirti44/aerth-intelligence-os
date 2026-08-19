@@ -140,7 +140,7 @@ Provide a deep research analysis. Return ONLY valid JSON:
     let completion;
     try {
       completion = await client.chat.completions.create({
-        model: 'llama-3.3-70b-versatile',
+        model: 'openai/gpt-oss-120b',
         temperature: 0.4,
         response_format: { type: 'json_object' },
         max_tokens: 2500,

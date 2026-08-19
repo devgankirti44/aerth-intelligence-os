@@ -134,7 +134,7 @@ Length: 3 paragraphs, ~120 words each. Plain text, no markdown headers.`;
     let completion;
     try {
       completion = await client.chat.completions.create({
-        model: 'llama-3.3-70b-versatile',
+        model: 'openai/gpt-oss-120b',
         temperature: 0.6,
         max_tokens: 900,
         messages: [
